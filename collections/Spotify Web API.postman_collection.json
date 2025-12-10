@@ -1,0 +1,1585 @@
+{
+	"info": {
+		"_postman_id": "659d3b3d-bd43-4086-b490-14b4d69aff0f",
+		"name": "Spotify Web API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50621740",
+		"_collection_link": "https://rituzpost.postman.co/workspace/API-Sandbox~b1aeab31-4394-46da-b85f-d64de7af1555/collection/50621740-659d3b3d-bd43-4086-b490-14b4d69aff0f?action=share&source=collection_link&creator=50621740"
+	},
+	"item": [
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "Get Album",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/albums/{{album_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Album Tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/albums/{{album_id}}/tracks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"albums",
+								"{{album_id}}",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/albums?ids={{album_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"albums"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{album_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Saved Albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/albums",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Albums for Current User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    \"20dY0uZi9SzfrcWYfiWGqH\",\r\n    \"2WFFcvzM0CgLaSq4MSkyZk\",\r\n    \"32iAEBstCjauDhyKpGjTuq\",\r\n    \"1xn54DMo2qIqBuMqHtUsFd\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/me/albums",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User's Saved Albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/albums/contains?ids={{album_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"albums",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{album_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Users' Saved Albums",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    \"20dY0uZi9SzfrcWYfiWGqH\",\r\n    \"2WFFcvzM0CgLaSq4MSkyZk\",\r\n    \"32iAEBstCjauDhyKpGjTuq\",\r\n    \"1xn54DMo2qIqBuMqHtUsFd\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/me/albums",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get New Releases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/browse/new-releases",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"browse",
+								"new-releases"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Artists",
+			"item": [
+				{
+					"name": "Get Artist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/artists/{{artist_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"artists",
+								"{{artist_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Artists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/artists?ids={{artist_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"artists"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{artist_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist's Albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/artists/{{artist_id}}/albums",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"artists",
+								"{{artist_id}}",
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Artist's Top Tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/artists/{{artist_id}}/top-tracks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"artists",
+								"{{artist_id}}",
+								"top-tracks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get Single Browse Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/browse/categories/{{category_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"browse",
+								"categories",
+								"{{category_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Browse Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/browse/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"browse",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Episodes",
+			"item": [
+				{
+					"name": "Get Episode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/episodes/{{episode_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"episodes",
+								"{{episode_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Episodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/episodes?ids={{episode_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"episodes"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{episode_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Saved Episodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/episodes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Episodes for Current User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": [\r\n        \"36otcvLd9simr4J7eUPz96\",\r\n        \"3m419KWGstNMPr9CV6SSWs\",\r\n        \"4c3yFnb6KyaVvwgtPyqVQT\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/me/episodes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User's Saved Episodes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\": [\r\n        \"36otcvLd9simr4J7eUPz96\",\r\n        \"3m419KWGstNMPr9CV6SSWs\",\r\n        \"4c3yFnb6KyaVvwgtPyqVQT\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/me/episodes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User's Saved Episodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/episodes/contains?ids={{episode_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"episodes",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{episode_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Player",
+			"item": []
+		},
+		{
+			"name": "Playlists",
+			"item": [
+				{
+					"name": "Get Playlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Playlist Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}/tracks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Playlist Details",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Updated Playlist\",\r\n    \"description\": \"\",\r\n    \"public\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Playlist Items",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"range_start\": 3,\r\n  \"insert_before\": 5,\r\n  \"range_length\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}/tracks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Items to Playlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"uris\": [\r\n    \"spotify:track:6b2WZQaW8BWRCY7AMHaMP1\",\r\n    \"spotify:track:0nCfCedKIf6EjWFt55AXum\",\r\n    \"spotify:track:3tlYKGhlexHCt8Ac5pYG49\",\r\n    \"spotify:track:0v0o4Otymd018Md9coeR4i\"\r\n  ],\r\n  \"position\": 0\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}/tracks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Playlist Items",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tracks\": [\r\n    {\r\n      \"uri\": \"spotify:track:6b2WZQaW8BWRCY7AMHaMP1\"\r\n    },\r\n    {\r\n      \"uri\": \"spotify:track:0nCfCedKIf6EjWFt55AXum\"\r\n    },\r\n    {\r\n      \"uri\": \"spotify:track:3tlYKGhlexHCt8Ac5pYG49\"\r\n    },\r\n    {\r\n      \"uri\": \"spotify:track:0v0o4Otymd018Md9coeR4i\"\r\n    }\r\n  ],\r\n  \"snapshot_id\": \"AAAAAn7tySEUnYmxNZ0Lr7SGpzDiYQB6\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}/tracks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User's Playlists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/playlists",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Playlists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{user_id}}/playlists",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Playlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"New Playlist\",\r\n    \"description\": \"New playlist description\",\r\n    \"public\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/{{user_id}}/playlists",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"playlists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Playlist Cover Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}/images",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Custom Playlist Cover Image",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{{base64_image}}",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}/images",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search for Item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/search?q={{q}}&type=track",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "{{q}}"
+								},
+								{
+									"key": "type",
+									"value": "track"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shows",
+			"item": [
+				{
+					"name": "Get Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/shows/{{show_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shows",
+								"{{show_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Shows",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/shows?ids={{show_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shows"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{show_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Show Episodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/shows/{{show_id}}/episodes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shows",
+								"{{show_id}}",
+								"episodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Saved Shows",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/shows",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"shows"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Shows for Current User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/shows?ids={{show_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"shows"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{show_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User's Saved Shows",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/shows/contains?ids={{show_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"shows",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{show_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User's Saved Shows",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/shows?ids={{show_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"shows"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{show_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tracks",
+			"item": [
+				{
+					"name": "Get Track",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tracks/{{track_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tracks",
+								"{{track_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Several Tracks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/tracks?ids={{track_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tracks"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{track_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Saved Tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/tracks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check User's Saved Tracks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/tracks/contains?ids={{track_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"tracks",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{track_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Tracks for Current User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    \"6b2WZQaW8BWRCY7AMHaMP1\",\r\n    \"0nCfCedKIf6EjWFt55AXum\",\r\n    \"3tlYKGhlexHCt8Ac5pYG49\",\r\n    \"0v0o4Otymd018Md9coeR4i\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/me/tracks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User's Saved Tracks",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    \"6b2WZQaW8BWRCY7AMHaMP1\",\r\n    \"0nCfCedKIf6EjWFt55AXum\",\r\n    \"3tlYKGhlexHCt8Ac5pYG49\",\r\n    \"0v0o4Otymd018Md9coeR4i\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/me/tracks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"tracks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get Current User's Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Top Items",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const types = [\"artists\", \"tracks\"];\r",
+									"const randomType = types[Math.floor(Math.random() * types.length)];\r",
+									"\r",
+									"pm.collectionVariables.set(\"type\", randomType);\r",
+									"\r",
+									"//long_term medium_term short_term\r",
+									"if (!pm.collectionVariables.get(\"time_range\")) {\r",
+									"    pm.collectionVariables.set(\"time_range\", \"medium_term\");\r",
+									"}\r",
+									"//1 - 50\r",
+									"if (!pm.collectionVariables.get(\"limit\")) {\r",
+									"    pm.collectionVariables.set(\"limit\", \"20\");\r",
+									"}\r",
+									"//0\r",
+									"if (!pm.collectionVariables.get(\"offset\")) {\r",
+									"    pm.collectionVariables.set(\"offset\", \"0\");\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/top/{{type}}?offset={{offset}}&time_range={{time_range}}&limit={{limit}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"top",
+								"{{type}}"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "{{offset}}"
+								},
+								{
+									"key": "time_range",
+									"value": "{{time_range}}"
+								},
+								{
+									"key": "limit",
+									"value": "{{limit}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/{{user_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"{{user_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow Playlist",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"public\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}/followers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}",
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow Playlist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}/followers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}",
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Followed Artists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/following?type=artist",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"following"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Follow Artists or Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/following?type=artist&ids={{artist_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"following"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								},
+								{
+									"key": "ids",
+									"value": "{{artist_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow Artists or Users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/following?type=artist&ids={{artist_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"following"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								},
+								{
+									"key": "ids",
+									"value": "{{artist_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check If User Follows Artists or Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/me/following/contains?type=artist&ids={{artist_ids}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me",
+								"following",
+								"contains"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "artist"
+								},
+								{
+									"key": "ids",
+									"value": "{{artist_ids}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check if Current User Follows Playlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/playlists/{{playlist_id}}/followers/contains",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"playlists",
+								"{{playlist_id}}",
+								"followers",
+								"contains"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "tokenType",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "accessToken",
+				"value": "BQB4nXij9Bi5YCx5BFgC2693PEyGEYnJdne1fDbeaAv0GQTsLybgxY-eiYi1mxgsGRzgdFYL5GjZTlAXWHTh9TPbCLSvKkQy_wD5npdVK_-H2InVBJ2QVVwMshxYdMZCAHyu2LlXwncTlEKSqwnKyzxAqUUdhfcmU_dT-HMFEVUBh-3UN-66QZ0nfWwS2VJuo3dpw9UOGgxhXLumpsF_uDj9k3ZMwTRuGVz7Oko78nkZy8Q1ECPFl62i4HkodxptAEDDMoiyL4IEg7gzh1C6qVe4vp5YlstziJmrwUy53SMMMR9srBa212gcgQugeKc8Zcy8X0gZOipMZaxtC7WLI3xUrkplQaoX_0sPiGxT_Gdky-iYoL4ing",
+				"type": "string"
+			},
+			{
+				"key": "refreshTokenUrl",
+				"value": "{{token_url}}",
+				"type": "string"
+			},
+			{
+				"key": "state",
+				"value": "{{state}}",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "{{scope}}",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "{{token_url}}",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "{{auth_url}}",
+				"type": "string"
+			},
+			{
+				"key": "useBrowser",
+				"value": true,
+				"type": "boolean"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "{{redirect_uri}}",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "access_token",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "redirect_uri",
+			"value": ""
+		},
+		{
+			"key": "auth_url",
+			"value": ""
+		},
+		{
+			"key": "token_url",
+			"value": ""
+		},
+		{
+			"key": "scope",
+			"value": ""
+		},
+		{
+			"key": "state",
+			"value": ""
+		},
+		{
+			"key": "user_id",
+			"value": ""
+		},
+		{
+			"key": "track_id",
+			"value": ""
+		},
+		{
+			"key": "track_ids",
+			"value": ""
+		},
+		{
+			"key": "q",
+			"value": ""
+		},
+		{
+			"key": "album_id",
+			"value": ""
+		},
+		{
+			"key": "album_ids",
+			"value": ""
+		},
+		{
+			"key": "artist_id",
+			"value": ""
+		},
+		{
+			"key": "artist_ids",
+			"value": ""
+		},
+		{
+			"key": "category_id",
+			"value": ""
+		},
+		{
+			"key": "playlist_id",
+			"value": ""
+		},
+		{
+			"key": "episode_id",
+			"value": ""
+		},
+		{
+			"key": "episode_ids",
+			"value": ""
+		},
+		{
+			"key": "show_id",
+			"value": ""
+		},
+		{
+			"key": "show_ids",
+			"value": ""
+		},
+		{
+			"key": "type",
+			"value": ""
+		},
+		{
+			"key": "time_range",
+			"value": ""
+		},
+		{
+			"key": "limit",
+			"value": ""
+		},
+		{
+			"key": "offset",
+			"value": ""
+		},
+		{
+			"key": "base64_image",
+			"value": ""
+		}
+	]
+}
