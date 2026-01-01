@@ -1396,7 +1396,7 @@
 			},
 			{
 				"key": "accessToken",
-				"value": "BQB4nXij9Bi5YCx5BFgC2693PEyGEYnJdne1fDbeaAv0GQTsLybgxY-eiYi1mxgsGRzgdFYL5GjZTlAXWHTh9TPbCLSvKkQy_wD5npdVK_-H2InVBJ2QVVwMshxYdMZCAHyu2LlXwncTlEKSqwnKyzxAqUUdhfcmU_dT-HMFEVUBh-3UN-66QZ0nfWwS2VJuo3dpw9UOGgxhXLumpsF_uDj9k3ZMwTRuGVz7Oko78nkZy8Q1ECPFl62i4HkodxptAEDDMoiyL4IEg7gzh1C6qVe4vp5YlstziJmrwUy53SMMMR9srBa212gcgQugeKc8Zcy8X0gZOipMZaxtC7WLI3xUrkplQaoX_0sPiGxT_Gdky-iYoL4ing",
+				"value": "{{access_token}}",
 				"type": "string"
 			},
 			{
